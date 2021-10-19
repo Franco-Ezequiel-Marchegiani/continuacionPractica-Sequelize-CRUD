@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/css/style.css' />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> Crear Película</h1>
+    <br>
+    <a href="/movies">Volver al inicio</a>
+    <br>
+    <br>
+    <form action="/movies/create" method="POST">
+        <div>
+            <label for="title">Titulo</label>
+            <input type="text" name="title" id="title">
+        </div>
+        <div>
+            <label for="premios">Premios</label>
+            <input type="number" name="premios" id="premios">
+        </div>
+        <div>
+            <label for="duracion">Duración</label>
+            <input type="number" name="duracion" id="duracion">
+        </div>
+        <div>
+            <label for="rating">Rating</label>
+            <input type="number" name="rating" id="rating">
+        </div>
+        <div>
+            <label for="relase_date">Fecha de estreno</label>
+            <input type="date" name="relase_date" id="relase_date">
+        </div>
+        <div>
+            <label for="rating">Genero</label>
+            <select name="genero">
+                <% generos.forEach(genero=> {%>
+                    <option value="<%= genero.id %>">
+                        <%= genero.name %>
+                    </option>
+                    <%})%>
+            </select>
+        </div>
+        <br>
+        <button type="submit">Crear</button>
+    </form>
+</body>
+
+</html>

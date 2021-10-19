@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        CineMark
+    </title>
+    <link rel='stylesheet' href='/css/style.css' />
+</head>
+
+<body>
+    <figure>
+        <img src="/img/logo-DH.png" alt="Logo Digital House">
+    </figure>
+    <h1>
+        Está seguro que desea borrar <%= movie.title %> ?
+    </h1>
+    <br>
+    <a href="/movies">Volver al listado</a>
+    <br>
+    <br>
+    <a href="/movies/edit/<%= movie.id %>">Editar Película</a>
+    <br>
+    <br>
+    <form action="/movies/delete/<%= movie.id %>?_method=DELETE" method="post">
+        <button type="submit">Eliminar</button>
+    </form>
+</body>
+
+</html>
